@@ -1,0 +1,67 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+PREFIX ogcld: <https://data.surroundaustralia.com/def/ogcldapi/>
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+ogcld:requirement-fc-title
+	a sh:NodeShape ;
+	sh:targetClass ogcld:FeatureCollection ;
+    sh:message "Requirement FC-title: Each Feature Collection _MUST_ have one and only one English title which is an English text literal, indicated using the `skos:prefLabel` property"@en ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:languageIn ("en") ;
+    ]
+.
+
+ogcld:requirement-fc-defn
+	a sh:NodeShape ;
+	sh:targetClass ogcld:FeatureCollection ;
+    sh:message "Requirement FC-defn: Each Feature Collection _MUST_ have no more than one English definition which is an English text literal, indicated using the `skos:definition` property"@en ;
+    sh:property [
+        sh:path skos:definition ;
+        sh:maxCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:languageIn ("en") ;
+    ]
+.
+
+ogcld:requirement-fc-id
+	a sh:NodeShape ;
+	sh:targetClass ogcld:FeatureCollection ;
+    sh:message "Requirement FC-id: Each Feature Collection _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` property. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL."@en ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:token ;
+    ]
+.
+
+ogcld:requirement-fc-partof
+	a sh:NodeShape ;
+	sh:targetClass ogcld:FeatureCollection ;
+    sh:message "Requirement FC-part: Each Feature Collection _MUST_ indicate that it is part of one and only one `loci:Dataset` with use of the `dcterms:isPartOf` property"@en ;
+    sh:property [
+        sh:path dcterms:isPartOf ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ogcld:Dataset ;
+    ]
+.
+
+ogcld:requirement-fc-haspart
+	a sh:NodeShape ;
+	sh:targetClass ogcld:FeatureCollection ;
+    sh:message "Requirement FC-part: If a Feature Collection has a part, indicated by `dcterms:hasPart`, that part _MUST_ be of type `geo:Feature`"@en ;
+    sh:property [
+        sh:path dcterms:isPartOf ;
+        sh:class geo:Feature ;
+    ]
+.
