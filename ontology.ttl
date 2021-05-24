@@ -33,6 +33,12 @@ ogcld:FeatureCollection
         owl:onProperty dcterms:isPartOf ;
         owl:class ogcld:Dataset ;
     ] ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty dcterms:title ;
+        owl:class rdfs:Literal ;
+    ] ;
     # rdfs:subClassOf [
     #     a owl:Restriction ;
     #     owl:minCardinality "1"^^xsd:nonNegativeInteger ;
@@ -40,5 +46,3 @@ ogcld:FeatureCollection
     #     owl:class geo:Feature ;
     # ] ;    
 .
-
-
