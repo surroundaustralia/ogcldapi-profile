@@ -1,18 +1,20 @@
-@prefix dcterms: <http://purl.org/dc/terms/> .
-PREFIX ogcld: <https://data.surroundaustralia.com/def/ogcldapi/>
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX req: <https://data.surroundaustralia.com/def/olapapi/requirement/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-
-ogcld:requirement-fc-title
+#
+#   Dataset
+#
+req:d-title
 	a sh:NodeShape ;
-	sh:targetClass ogcld:FeatureCollection ;
-    sh:message "Requirement FC-title: Each Feature Collection _MUST_ have one and only one English title which is an English text literal, indicated using the `skos:prefLabel` property"@en ;
-    sh:property [
-        sh:path skos:prefLabel ;
+	sh:targetClass dcat:Dataset ;
+    sh:message "Requirement D-title: Each Dataset _MUST_ have one and only one English title which is an English text literal, indicated using the `dcterms:title` predicate"@en ;
+    sh:predicate [
+        sh:path dcterms:title ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:datatype rdf:langString ;
@@ -20,23 +22,23 @@ ogcld:requirement-fc-title
     ]
 .
 
-ogcld:requirement-fc-defn
+req:d-desc
 	a sh:NodeShape ;
-	sh:targetClass ogcld:FeatureCollection ;
-    sh:message "Requirement FC-defn: Each Feature Collection _MUST_ have no more than one English definition which is an English text literal, indicated using the `skos:definition` property"@en ;
-    sh:property [
-        sh:path skos:definition ;
+	sh:targetClass dcat:Dataset ;
+    sh:message "Requirement D-defn: Each Dataset _MUST_ have no more than one English definition which is an English text literal, indicated using the `dcterms:description` predicate"@en ;
+    sh:predicate [
+        sh:path dcterms:description ;
         sh:maxCount 1 ;
         sh:datatype rdf:langString ;
         sh:languageIn ("en") ;
     ]
 .
 
-ogcld:requirement-fc-id
+req:d-id
 	a sh:NodeShape ;
-	sh:targetClass ogcld:FeatureCollection ;
-    sh:message "Requirement FC-id: Each Feature Collection _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` property. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL."@en ;
-    sh:property [
+	sh:targetClass dcat:Dataset ;
+    sh:message "Requirement D-id: Each Dataset _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` predicate. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL."@en ;
+    sh:predicate [
         sh:path dcterms:identifier ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
@@ -44,24 +46,124 @@ ogcld:requirement-fc-id
     ]
 .
 
-ogcld:requirement-fc-partof
+req:d-haspart
 	a sh:NodeShape ;
-	sh:targetClass ogcld:FeatureCollection ;
-    sh:message "Requirement FC-part: Each Feature Collection _MUST_ indicate that it is part of one and only one `loci:Dataset` with use of the `dcterms:isPartOf` property"@en ;
-    sh:property [
+	sh:targetClass dcat:Dataset ;
+    sh:message "Requirement D-part: If a Dataset has a part, indicated by `dcterms:hasPart`, that part _MUST_ be of type `geo:FeatureCollection`"@en ;
+    sh:predicate [
         sh:path dcterms:isPartOf ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:class ogcld:Dataset ;
+        sh:class geo:FeatureCollection ;
     ]
 .
 
-ogcld:requirement-fc-haspart
+#
+#   FeatureCollection
+#
+req:fc-title
 	a sh:NodeShape ;
-	sh:targetClass ogcld:FeatureCollection ;
+	sh:targetClass geo:FeatureCollection ;
+    sh:message "Requirement FC-title: Each Feature Collection _MUST_ have one and only one English title which is an English text literal, indicated using the `dcterms:title` predicate"@en ;
+    sh:predicate [
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:languageIn ("en") ;
+    ]
+.
+
+req:fc-desc
+	a sh:NodeShape ;
+	sh:targetClass geo:FeatureCollection ;
+    sh:message "Requirement FC-defn: Each Feature Collection _MUST_ have no more than one English definition which is an English text literal, indicated using the `dcterms:description` predicate"@en ;
+    sh:predicate [
+        sh:path dcterms:description ;
+        sh:maxCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:languageIn ("en") ;
+    ]
+.
+
+req:fc-id
+	a sh:NodeShape ;
+	sh:targetClass geo:FeatureCollection ;
+    sh:message "Requirement FC-id: Each Feature Collection _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` predicate. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL."@en ;
+    sh:predicate [
+        sh:path dcterms:identifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:token ;
+    ]
+.
+
+req:fc-partof
+	a sh:NodeShape ;
+	sh:targetClass geo:FeatureCollection ;
+    sh:message "Requirement FC-part: Each Feature Collection _MUST_ indicate that it is part of one and only one `dcat:Dataset` with use of the `dcterms:isPartOf` predicate"@en ;
+    sh:predicate [
+        sh:path dcterms:isPartOf ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class dcat:Dataset ;
+    ]
+.
+
+req:fc-haspart
+	a sh:NodeShape ;
+	sh:targetClass geo:FeatureCollection ;
     sh:message "Requirement FC-part: If a Feature Collection has a part, indicated by `dcterms:hasPart`, that part _MUST_ be of type `geo:Feature`"@en ;
-    sh:property [
+    sh:predicate [
         sh:path dcterms:isPartOf ;
         sh:class geo:Feature ;
+    ]
+.
+
+req:fc-bb
+	a sh:NodeShape ;
+	sh:targetClass geo:FeatureCollection ;
+    sh:message "Requirement FC-bb: A Feature Collection _MAY_ indicate a Bounding Box geometry with a `geo:boundingBox` predicate"@en ;
+    sh:predicate [
+        sh:path dcterms:isPartOf ;
+        sh:class geo:Feature ;
+    ]
+.
+
+#
+#   Feature
+#
+req:f-id
+	a sh:NodeShape ;
+	sh:targetClass geo:Feature ;
+    sh:message "Requirement F-id: Each Feature _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` predicate. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL."@en ;
+    sh:predicate [
+        sh:path dcterms:identifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:token ;
+    ]
+.
+
+req:f-partof
+	a sh:NodeShape ;
+	sh:targetClass geo:Feature ;
+    sh:message "Requirement F-part: Each Feature _MUST_ indicate that it is part of at least one `geo:FeatureCollection` with use of the `dcterms:isPartOf` predicate"@en ;
+    sh:predicate [
+        sh:path dcterms:isPartOf ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class dcat:Dataset ;
+    ]
+.
+
+# TODO: consider other, specialised, hasGeometry properties, such as hasCentroid
+req:f-partof
+	a sh:NodeShape ;
+	sh:targetClass geo:Feature ;
+    sh:message "Requirement F-geometry: Each Feature _MUST_ indicate that it has at least one `geo:Geometry` with use of the `geo:hasGeometry` predicate"@en ;
+    sh:predicate [
+        sh:path dcterms:isPartOf ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class dcat:Dataset ;
     ]
 .
