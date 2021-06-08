@@ -12,7 +12,7 @@ The classes of data required for an OGC API are:
 Our interpretation of this is that the following Semantic Web / Linked Data classes of object correspond to those above:
 
 1. `dcat:Dataset` (and possibly a `dcat:DataService` but this isn't implemented yet) - as per [DCAT]()
-2. `geo:FeatureColllection` - as per [GeoSPARQL 1.1]()
+2. `geo:FeatureCollection` - as per [GeoSPARQL 1.1]()
 3. `geo:Feature` - as per the original [GeoSPARQL]()
 
 The OGC LD API requires data objects in of these classes to have certain properties - titles, IDs, geometries etc. - and a [SHACL Shape validator]() is provided to validate that data to be used by API instances actually does contain these elements.
