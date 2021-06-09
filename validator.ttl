@@ -37,7 +37,7 @@ req:d-desc
 req:d-id
 	a sh:NodeShape ;
 	sh:targetClass dcat:Dataset ;
-    sh:message "Requirement D-id: Each Dataset _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` predicate. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL."@en ;
+    sh:message "Requirement D-id: Each Dataset _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` predicate. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL"@en ;
     sh:predicate [
         sh:path dcterms:identifier ;
         sh:minCount 1 ;
@@ -53,6 +53,16 @@ req:d-haspart
     sh:predicate [
         sh:path dcterms:isPartOf ;
         sh:class geo:FeatureCollection ;
+    ]
+.
+
+req:d-bb
+	a sh:NodeShape ;
+	sh:targetClass geo:FeatureCollection ;
+    sh:message "Requirement D-bb: A Dataset _MAY_ indicate a Bounding Box geometry with a `geo:boundingBox` predicate"@en ;
+    sh:predicate [
+        sh:path dcterms:isPartOf ;
+        sh:class geo:Feature ;
     ]
 .
 
@@ -87,7 +97,7 @@ req:fc-desc
 req:fc-id
 	a sh:NodeShape ;
 	sh:targetClass geo:FeatureCollection ;
-    sh:message "Requirement FC-id: Each Feature Collection _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` predicate. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL."@en ;
+    sh:message "Requirement FC-id: Each Feature Collection _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` predicate. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL"@en ;
     sh:predicate [
         sh:path dcterms:identifier ;
         sh:minCount 1 ;
@@ -134,7 +144,7 @@ req:fc-bb
 req:f-id
 	a sh:NodeShape ;
 	sh:targetClass geo:Feature ;
-    sh:message "Requirement F-id: Each Feature _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` predicate. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL."@en ;
+    sh:message "Requirement F-id: Each Feature _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` predicate. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL"@en ;
     sh:predicate [
         sh:path dcterms:identifier ;
         sh:minCount 1 ;
@@ -156,12 +166,12 @@ req:f-partof
 .
 
 # TODO: consider other, specialised, hasGeometry properties, such as hasCentroid
-req:f-partof
+req:f-hasgeometry
 	a sh:NodeShape ;
 	sh:targetClass geo:Feature ;
     sh:message "Requirement F-geometry: Each Feature _MUST_ indicate that it has at least one `geo:Geometry` with use of the `geo:hasGeometry` predicate"@en ;
     sh:predicate [
-        sh:path dcterms:isPartOf ;
+        sh:path geo:hasGeometry ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:class dcat:Dataset ;
