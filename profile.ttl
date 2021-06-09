@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<https://w3id.org/profile/ogcldapi>
+    a prof:Profile ;
+    dcterms:created "2021-06-07"^^xsd:date ;
+    dcterms:creator <https://linked.data.gov.au/org/surround> ;
+    dcterms:modified "2020-06-09"^^xsd:date ;
+    dcterms:publisher <https://linked.data.gov.au/org/surround> ;
+    skos:definition "This profile of GeoSPARQL 1.1 and DCAT2 defined the elements of some of their classes needed for supplying OGC LD API systems with the data it needs to operate."@en ;
+    skos:prefLabel "OGC LD API Profile" ;
+    prof:hasResource 
+#     [
+#         skos:prefLabel "Specification Document"@en ;
+#         dcterms:conformsTo <https://www.w3.org/TR/html52/> ;
+#         dcterms:format "text/html" ;
+#         prof:hasArtifact <https://w3id.org/profile/ogcldapi/spec> ;
+#         prof:hasRole role:specification
+#     ] ,
+    [
+        skos:prefLabel "Validator in SHACL"@en ;
+        dcterms:conformsTo <https://www.w3.org/TR/shacl/> ;
+        dcterms:format "text/turtle" ;
+        prof:hasArtifact <https://w3id.org/profile/ogcldapi/validator> ;
+        prof:hasRole role:validation
+    ] ,
+#     [
+#         skos:prefLabel "Example of a valid Feature"@en ;
+#         dcterms:format "text/turtle" ;
+#         prof:hasArtifact <https://w3id.org/profile/ogcldapi/examples/valid> ;
+#         prof:hasRole role:example
+#     ] ,
+#     [
+#         skos:prefLabel "Example of an invalid Feature"@en ;
+#         dcterms:description "This example vocabulary does not satisfy the Specification's Requirement 2.1.5 (the ConceptScheme is missing a dcterms:created date)"@en ;
+#         dcterms:format "text/turtle" ;
+#         prof:hasArtifact <https://w3id.org/profile/vocpub/examples/invalid> ;
+#         prof:hasRole role:example
+#     ] ,
+    [
+        skos:prefLabel "Profile code repository"@en ;
+        dcterms:description "Code repository storing all Profile artifacts"@en ;
+        prof:hasArtifact <https://github.com/surroundaustralia/ogcldapi-profile> ;
+        prof:hasRole role:repository
+    ] ;
+    prof:isProfileOf <https://www.w3.org/TR/skos-reference/> ;
+.
+
+<https://linked.data.gov.au/org/surround> a sdo:Organization ;
+    sdo:name "SURROUND Australia Pty Ltd" ;
+    sdo:url "https://surroundaustralia.com"^^xsd:anyURI ;
+.
