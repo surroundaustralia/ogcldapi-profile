@@ -32,13 +32,13 @@ Note [Citation](#citation) below for attribution.
 To cite this profile, please use the following (formulated in [BibTex](http://www.bibtex.org/)):
 
 ```
-@software{vocpub-profile,
+@software{ogcldapi-profile,
   author = {{SURROUND Australia Pty Ltd}},
-  title = {{Vocabulary Publication Profile}},
+  title = {{OGC Linked Data API Profile}},
   version = {1.0},
   date = {2021},
   publisher = {{SURROUND Australia Pty Ltd}},
-  url = {https://w3id.org/profile/vocpub}
+  url = {https://w3id.org/profile/ogcldapi}
 }
 ``` 
 
