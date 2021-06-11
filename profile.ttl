@@ -12,7 +12,7 @@
     skos:prefLabel "OGC LD API Profile"@en ;
     dcterms:created "2021-06-10"^^xsd:date ;
     dcterms:creator <http://orcid.org/0000-0002-8742-7730> ;
-    dcterms:contributor <http://orcid.org/0000-XXXX-XXXX-XXXX> ;
+    dcterms:contributor <https://orcid.org/0000-0002-3322-1868> ;
     dcterms:modified "2021-06-10"^^xsd:date ;
     dcterms:publisher <https://linked.data.gov.au/org/surround> ;
     skos:definition "This profile specifies the rules that [RDF](https://www.w3.org/RDF/) data must adhere to, to be valid according to this profile and thus fit for use with instances of the OGC LD API tool. It also provides machine-readable data validators." ;
@@ -68,7 +68,7 @@
     sdo:affiliation <https://linked.data.gov.au/org/surround> ;
 .
 
-<http://orcid.org/0000-XXXX-XXXX-XXXX>
+<https://orcid.org/0000-0002-3322-1868>
     a sdo:Person ;
     sdo:name "David Habgood" ;
     sdo:email "david.habgood@surroundaustralia.com"^^xsd:anyURI ;
