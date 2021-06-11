@@ -15,7 +15,7 @@
     dcterms:contributor <https://orcid.org/0000-0002-3322-1868> ;
     dcterms:modified "2021-06-10"^^xsd:date ;
     dcterms:publisher <https://linked.data.gov.au/org/surround> ;
-    skos:definition "This profile specifies the rules that [RDF](https://www.w3.org/RDF/) data must adhere to, to be valid according to this profile and thus fit for use with instances of the OGC LD API tool. It also provides machine-readable data validators." ;
+    skos:definition "This profile specifies rules that [RDF](https://www.w3.org/RDF/) data must adhere to, to be fit for use with instances of the OGC LD API tool. It also provides machine-readable data validators." ;
     prof:hasResource 
     [
         skos:prefLabel "Specification"@en ;
