@@ -1,0 +1,37 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://qudt.org/vocab/unit/M2>
+  rdf:type <http://qudt.org/schema/qudt/DerivedUnit> ;
+  rdf:type <http://qudt.org/schema/qudt/Unit> ;
+  <http://purl.org/dc/terms/description> "The S I unit of area is the square metre."^^rdf:HTML ;
+  <http://qudt.org/schema/qudt/conversionMultiplier> 1.0 ;
+  <http://qudt.org/schema/qudt/dbpediaMatch> "http://dbpedia.org/resource/Square_metre"^^xsd:anyURI ;
+  <http://qudt.org/schema/qudt/expression> "\\(sq-m\\)"^^<http://qudt.org/schema/qudt/LatexString> ;
+  <http://qudt.org/schema/qudt/hasDimensionVector> <http://qudt.org/vocab/dimensionvector/A0E0L2I0M0H0T0D0> ;
+  <http://qudt.org/schema/qudt/hasQuantityKind> <http://qudt.org/vocab/quantitykind/Area> ;
+  <http://qudt.org/schema/qudt/hasQuantityKind> <http://qudt.org/vocab/quantitykind/NuclearQuadrupoleMoment> ;
+  <http://qudt.org/schema/qudt/iec61360Code> "0112/2///62720#UAA744" ;
+  <http://qudt.org/schema/qudt/informativeReference> "http://en.wikipedia.org/wiki/Square_metre?oldid=490945508"^^xsd:anyURI ;
+  <http://qudt.org/schema/qudt/ucumCode> "m2"^^<http://qudt.org/schema/qudt/UCUMcs> ;
+  <http://qudt.org/schema/qudt/uneceCommonCode> "MTK" ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/vocab/unit> ;
+  rdfs:label "Square Meter"@en-us ;
+  rdfs:label "Square Metre"@en ;
+.
+<http://qudt.org/schema/qudt/numericValue>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "numeric value" ;
+  rdfs:range <http://www.linkedmodel.org/schema/dtype#numericUnion> ;
+.
+<http://qudt.org/schema/qudt/unit>
+  rdf:type owl:ObjectProperty ;
+  <http://purl.org/dc/terms/description> "A reference to the unit of measure of a quantity (variable or constant) of interest."^^rdf:HTML ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "unit" ;
+  rdfs:range <http://qudt.org/schema/qudt/Unit> ;
+  owl:inverseOf <http://qudt.org/schema/qudt/unitFor> ;
+.
