@@ -4,3 +4,4 @@ https://www.w3.org/2002/07/owl#
 http://www.w3.org/1999/02/22-rdf-syntax-ns#
 https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl
 https://www.w3.org/2006/time#
+https://w3id.org/profile/ogcldapi/labelling-vocabulary
