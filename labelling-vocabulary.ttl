@@ -6,14 +6,14 @@ PREFIX unit: <http://qudt.org/vocab/unit/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 
-<https://w3id.org/profile/ogcldapi/labelling-vocabulary> 
+<https://w3id.org/profile/ogcldapi/labeling-vocabulary> 
   a skos:ConceptScheme ;
-  skos:prefLabel "Labelling Vocabulary for OGC LD API"@en ;
+  skos:prefLabel "Labeling Vocabulary for OGC LD API"@en ;
   skos:definition """This vocabulary contains annotated classes, properties and other Semantic Web elements from ontologies that are commonly seen in OGC LD API data. 
   
 Rather than just importing those ontologies, we just list the elements that are actually seen in in OGC LD API data here as it's not always sensible to import a large ontology like QUDT when we only need 4 or 4 elements from its thousands
 
-No properties other than basic annotations from those other ontologies are given here as this vocab is only to be used for labelling."""@en ;
+No properties other than basic annotations from those other ontologies are given here as this vocab is only to be used for labeling."""@en ;
   skos:hasTopConcept 
     unit:DEG ,
     unit:HA ,
