@@ -1,0 +1,18 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sdo: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+# TODO: select only English SKOS prefLabels
+CONSTRUCT {
+    ?x rdfs:label ?y .
+}
+WHERE {
+    VALUES ?p {
+        dcterms:title
+        sdo:name
+        skos:prefLabel
+    }
+
+    ?x ?p ?y .
+}

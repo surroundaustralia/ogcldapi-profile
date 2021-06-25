@@ -296,12 +296,15 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
     <dd>
           <a href="#ub1bL19C5">Specification</a><br/>
           <a href="#ub1bL27C5">Validator</a><br/>
-          <a href="#ub1bL48C5">Profile Code Repository</a><br/>
-          <a href="#ub1bL54C5">Profile Code Repository README</a><br/>
+          <a href="#ub1bL35C5">Context Ontologies</a><br/>
+          <a href="#ub1bL42C5">Labelling Vocabulary</a><br/>
+          <a href="#ub1bL49C5">Label Builder script</a><br/>
+          <a href="#ub1bL56C5">Profile Code Repository</a><br/>
+          <a href="#ub1bL63C5">Profile Code Repository README</a><br/>
     </dd>
     <h2>Description</h2>
     <div id="comment">
-        <p>This profile specifies the rules that <a href="https://www.w3.org/RDF/">RDF</a> data must adhere to, to be valid according to this profile and thus fit for use with instances of the OGC LD API tool. It also provides machine-readable data validators.</p>
+        <p>This profile specifies rules that <a href="https://www.w3.org/RDF/">RDF</a> data must adhere to, to be fit for use with instances of the OGC LD API tool. It also provides machine-readable data validators.</p>
     </div>
 </section>
   <section id="resource_descriptors">
@@ -322,7 +325,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         <tr>
           <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
           <td>
-            <a href="https://w3id.org/profile/ogcldapi/spec">https://w3id.org/profile/ogcldapi/spec</a>
+            <a href="https://w3id.org/profile/ogcldapi/specification">https://w3id.org/profile/ogcldapi/specification</a>
           </td>
         </tr>
         
@@ -381,7 +384,94 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         
     </table>
 </div>
-      <div class="entity resource_descriptor" id="ub1bL48C5">
+      <div class="entity resource_descriptor" id="ub1bL35C5">
+    <h3>Context Ontologies</h3>
+    <table>
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/description">Description</a></th>
+          <td>A list of persistent identifiers for ontologies, elements of which are commonly used by OGC LD API data used to assit with property labelling in API data presentation.</td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
+          <td>
+            <a href="https://w3id.org/profile/ogcldapi/context-ontologies">https://w3id.org/profile/ogcldapi/context-ontologies</a>
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasRole">Role(s)</a></th>
+          <td>
+            
+              <a href="http://www.w3.org/ns/dx/prof/role/vocabulary">role:vocabulary</a><br />
+            
+          </td>
+        </tr>
+        
+    </table>
+</div>
+      <div class="entity resource_descriptor" id="ub1bL42C5">
+    <h3>Labelling Vocabulary</h3>
+    <table>
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/description">Description</a></th>
+          <td>A vocabulary contains annotated classes, properties and other Semantic Web elements from ontologies that are commonly seen in OGC LD API data used to assit with property labelling in API data presentation.</td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
+          <td>
+            <a href="https://w3id.org/profile/ogcldapi/labelling-vocabulary">https://w3id.org/profile/ogcldapi/labelling-vocabulary</a>
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasRole">Role(s)</a></th>
+          <td>
+            
+              <a href="http://www.w3.org/ns/dx/prof/role/vocabulary">role:vocabulary</a><br />
+            
+          </td>
+        </tr>
+        
+    </table>
+</div>
+      <div class="entity resource_descriptor" id="ub1bL49C5">
+    <h3>Label Builder script</h3>
+    <table>
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/description">Description</a></th>
+          <td>A SPARQL script that builds, via a CONSTRUCT query, rdfs:label predicates from dcterms:title, sdo:name and skos:prefLabel predicates. Assists with API labelling</td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
+          <td>
+            <a href="https://w3id.org/profile/ogcldapi/label-builder">https://w3id.org/profile/ogcldapi/label-builder</a>
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasRole">Role(s)</a></th>
+          <td>
+            
+              <a href="http://www.w3.org/ns/dx/prof/role/script">role:script</a><br />
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/conformsTo">Conforms to</a></th>
+          <td>
+            
+              <a href="https://www.w3.org/TR/sparql11-update/">https://www.w3.org/TR/sparql11-update/</a><br />
+            
+          </td>
+        </tr>
+        
+    </table>
+</div>
+      <div class="entity resource_descriptor" id="ub1bL56C5">
     <h3>Profile Code Repository</h3>
     <table>
         <tr>
@@ -392,7 +482,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         <tr>
           <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
           <td>
-            <a href="https://w3id.org/profile/ogcldapi/repo">https://w3id.org/profile/ogcldapi/repo</a>
+            <a href="https://github.com/surroundaustralia/ogcldapi-profile">https://github.com/surroundaustralia/ogcldapi-profile</a>
           </td>
         </tr>
         
@@ -407,7 +497,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         
     </table>
 </div>
-      <div class="entity resource_descriptor" id="ub1bL54C5">
+      <div class="entity resource_descriptor" id="ub1bL63C5">
     <h3>Profile Code Repository README</h3>
     <table>
         <tr>

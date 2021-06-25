@@ -1,0 +1,53 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX unit: <http://qudt.org/vocab/unit/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+<https://w3id.org/profile/ogcldapi/labelling-vocabulary> 
+  a skos:ConceptScheme ;
+  skos:prefLabel "Labelling Vocabulary for OGC LD API"@en ;
+  skos:definition """This vocabulary contains annotated classes, properties and other Semantic Web elements from ontologies that are commonly seen in OGC LD API data. 
+  
+Rather than just importing those ontologies, we just list the elements that are actually seen in in OGC LD API data here as it's not always sensible to import a large ontology like QUDT when we only need 4 or 4 elements from its thousands
+
+No properties other than basic annotations from those other ontologies are given here as this vocab is only to be used for labelling."""@en ;
+  skos:hasTopConcept 
+    unit:DEG ,
+    unit:HA ,
+    unit:M2 ,
+    qudt:numericValue ,
+    qudt:unit ;
+.
+unit:DEG
+  a skos:Concept ;  
+  rdfs:isDefinedBy <http://qudt.org/2.1/vocab/unit> ;
+  skos:definition "A degree (in full, a degree of arc, arc degree, or arcdegree), usually denoted by ∘ (the degree symbol), is a measurement of plane angle, representing 1/360 of a full rotation; one degree is equivalent to 2π/360rad, 0.017453rad. It is not an SI unit, as the SI unit for angles is radian, but is an accepted SI unit."@en ;
+  skos:prefLabel "Degree"@en ;
+.
+unit:HA
+  a skos:Concept ;  
+  rdfs:isDefinedBy <http://qudt.org/2.1/vocab/unit> ;
+  skos:definition "The customary metric unit of land area, equal to 100 ares. One hectare is a square hectometer, that is, the area of a square 100 meters on each side: exactly 10 000 square meters or approximately 107 639.1 square feet, 11 959.9 square yards, or 2.471 054 acres."@en ;
+  skos:prefLabel "Hectare"@en ;
+.
+unit:M2
+  a skos:Concept ;  
+  rdfs:isDefinedBy <http://qudt.org/2.1/vocab/unit> ;
+  skos:definition "The S I unit of area is the square metre."@en ;
+  skos:prefLabel "Square Metre"@en ;
+.
+qudt:numericValue
+  a skos:Concept ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  skos:definition "A value for a Result that is numeric."@en ;
+  skos:prefLabel "numeric value" ;
+.
+qudt:unit
+  a skos:Concept ;
+  skos:definition "A reference to the unit of measure of a quantity (variable or constant) of interest."@en ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  skos:prefLabel "unit" ;
+.
