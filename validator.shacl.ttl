@@ -163,7 +163,7 @@ req:f-partof
         sh:path dcterms:isPartOf ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:class dcat:FeatureCollection ;
+        sh:class geo:FeatureCollection ;
     ]
 .
 
