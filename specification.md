@@ -29,7 +29,7 @@ DCAT is identified by the `dcat` prefix and GeoSPARQL by the `geo` prefix.
 
 * **Requirement D-title****: Each  Dataset _MUST_ have one and only one English title which is an English text literal, indicated using the `dcterms:title` predicate
 
-* **Requirement D-defn**: Each  Dataset _MUST_ have no more than one English definition which is an English text literal, indicated using the `dcterms:description` predicate
+* **Requirement D-desc**: Each  Dataset _MUST_ have one and only one English description which is an English text literal, indicated using the `dcterms:description` predicate
 
 * **Requirement D-id**: Each  Dataset _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` predicate. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL.
 
@@ -42,7 +42,7 @@ DCAT is identified by the `dcat` prefix and GeoSPARQL by the `geo` prefix.
 
 * **Requirement FC-title**: Each  Feature Collection _MUST_ have one and only one English title which is an English text literal, indicated using the `dcterms:title` predicate
 
-* **Requirement FC-defn**: Each  Feature Collection _MUST_ have no more than one English definition which is an English text literal, indicated using the `dcterms:description` predicate
+* **Requirement FC-desc**: Each  Feature Collection _MUST_ have one and only one English description which is an English text literal, indicated using the `dcterms:description` predicate
 
 * **Requirement FC-id**: Each  Feature Collection _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` predicate. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL
 
