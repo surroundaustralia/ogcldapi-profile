@@ -6,3 +6,5 @@ https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_ter
 https://www.w3.org/2006/time#
 https://w3id.org/profile/ogcldapi/labeling-vocabulary
 https://www.w3.org/2009/08/skos-reference/skos.rdf
+https://www.w3.org/ns/locn.rdf
+https://www.w3.org/ns/dcat2.rdf
