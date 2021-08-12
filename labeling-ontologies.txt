@@ -8,4 +8,4 @@ https://w3id.org/profile/ogcldapi/labeling-vocabulary
 https://www.w3.org/2009/08/skos-reference/skos.rdf
 https://www.w3.org/ns/locn.rdf
 https://www.w3.org/ns/dcat2.rdf
-http://www.w3.org/wiki/images/2/2b/Vcard.rdf
+https://www.w3.org/2006/vcard/ns#
