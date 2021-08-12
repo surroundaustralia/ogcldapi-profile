@@ -1,10 +1,11 @@
 PREFIX owl: <http://www.w3.org/2002/07/owl#> 
 PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX unit: <http://qudt.org/vocab/unit/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
+PREFIX schema: <https://schema.org/>
 
 <https://w3id.org/profile/ogcldapi/labeling-vocabulary> 
   a skos:ConceptScheme ;
@@ -51,3 +52,9 @@ qudt:unit
   rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
   skos:prefLabel "unit" ;
 .
+schema:affiliation a rdf:Property ;
+    rdfs:label "affiliation" ;
+    rdfs:comment "An organization that this person is affiliated with. For example, a school/university, a club, or a team." ;
+    rdfs:subPropertyOf schema:memberOf ;
+    schema:domainIncludes schema:Person ;
+    schema:rangeIncludes schema:Organization .
