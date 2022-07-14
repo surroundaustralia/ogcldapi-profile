@@ -33,7 +33,7 @@ DCAT is identified by the `dcat` prefix and GeoSPARQL by the `geo` prefix.
 
 * **Requirement D-id**: Each  Dataset _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` predicate. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL.
 
-* **Requirement D-part**: If a Dataset has a part, indicated by `dcterms:hasPart`, that part _MUST_ be of type `geo:FeatureCollection`
+* **Requirement D-member**: If a Dataset has a member, indicated by `rdfs:member`, that member _MUST_ be of type `geo:FeatureCollection`
 
 * **Requirement D-bb**: A Dataset _MAY_ indicate a Bounding Box geometry with a `geo:boundingBox` predicate
 
@@ -46,9 +46,9 @@ DCAT is identified by the `dcat` prefix and GeoSPARQL by the `geo` prefix.
 
 * **Requirement FC-id**: Each  Feature Collection _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` predicate. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL
 
-* **Requirement FC-part**: Each  Feature Collection _MUST_ indicate that it is part of one and only one `dcat:Dataset` with use of the `dcterms:isPartOf` predicate
+* **Requirement FC-memberof**: Each  Feature Collection _MUST_ indicate that it is a member of one and only one `dcat:Dataset` with use of the `rdfs:member` predicate (with the Dataset as the object and Feature Collection as the object).
 
-* **Requirement FC-part**: If a Feature Collection has a part, indicated by `dcterms:hasPart`, that part _MUST_ be of type `geo:Feature`
+* **Requirement FC-member**: If a Feature Collection has a member(s), indicated by `rdfs:member`, that member _MUST_ be of type `geo:Feature`
 
 * **Requirement FC-bb**: A Feature Collection _MAY_ indicate a Bounding Box geometry with a `geo:boundingBox` predicate
 
@@ -57,6 +57,6 @@ DCAT is identified by the `dcat` prefix and GeoSPARQL by the `geo` prefix.
 
 * **Requirement F-id**: Each  Feature _MUST_ have one and only one identifier, an `xsd:token`, indicated using the `dcterms:identifier` predicate. Note: this identifier must be unique within the Dataset it is part of. This uniqueness is not testable in SHACL.
 
-* **Requirement F-part**: Each  Feature _MUST_ indicate that it is part of at least one `geo:FeatureCollection` with use of the `dcterms:isPartOf` predicate
+* **Requirement F-memberof**: Each  Feature _MUST_ indicate that it is a member of at least one `geo:FeatureCollection` with use of the `rdfs:member` predicate (with the Feature Collection as the object and Feature as the object).
 
 * **Requirement F-geometry**: Each  Feature _MUST_ indicate that it has at least one `geo:Geometry` with use of the `geo:hasGeometry` predicate
